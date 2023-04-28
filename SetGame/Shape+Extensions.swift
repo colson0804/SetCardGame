@@ -16,5 +16,6 @@ extension Shape {
     func fill(with card: SetGame.Card) -> some View {
         let color = Color[card.color]
         return self.fill(card.pattern == .open ? .white : color, strokeBorder: color, lineWidth: 3, opacity: card.pattern == .striped ? 0.2 : 1)
+            .aspectRatio(2/1, contentMode: .fit)
     }
 }

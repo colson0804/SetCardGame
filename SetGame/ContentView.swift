@@ -31,20 +31,22 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
                 .strokeBorder(.red, lineWidth: CardConstants.lineWidth)
             
-            Group {
-                switch card.shape {
-                case .oval:
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(with: card)
-                case .diamond:
-                    Circle()
-                        .fill(with: card)
-                case .squiggle:
-                    Rectangle()
-                        .fill(with: card)
+            VStack {
+                ForEach(0..<card.numberOfShapes, id: \.self) { _ in
+                    switch card.shape {
+                    case .oval:
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(with: card)
+                    case .diamond:
+                        Circle()
+                            .fill(with: card)
+                    case .squiggle:
+                        Rectangle()
+                            .fill(with: card)
+                    }
                 }
             }
-                .padding(15)
+                .padding(24)
         }
     }
     
