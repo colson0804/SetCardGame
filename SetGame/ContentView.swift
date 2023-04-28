@@ -38,7 +38,7 @@ struct CardView: View {
                         RoundedRectangle(cornerRadius: 50)
                             .fill(with: card)
                     case .diamond:
-                        Circle()
+                        Diamond()
                             .fill(with: card)
                     case .squiggle:
                         Rectangle()
