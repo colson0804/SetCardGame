@@ -36,13 +36,8 @@ struct SetGame {
                 selectedCount += 1
             }
             
-            if selectedCount == 3 {
-                if checkMatch() {
-                    print("Is a match!!")
-                    handleMatch()
-                } else {
-                    print("NOT a match")
-                }
+            if selectedCount == 3 && checkMatch() {
+                handleMatch()
             }
         }
     }
@@ -55,11 +50,16 @@ struct SetGame {
                 return
             }
             
-            if card.isSelected {
-                if !deck.isEmpty {
-                    drawnCards[index] = deck.removeFirst()
-                }
+            if card.isSelected{
+                drawnCards[index] = deck.removeFirst()
             }
+        }
+    }
+    
+    mutating func dealCards(_ numberOfCards: Int = 3) {
+        for _ in 0..<numberOfCards {
+            guard !deck.isEmpty else { return }
+            drawnCards.append(deck.removeFirst())
         }
     }
     

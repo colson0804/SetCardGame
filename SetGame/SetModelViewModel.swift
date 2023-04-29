@@ -43,6 +43,6 @@ class SetModelViewModel: ObservableObject {
     }
     
     func dealThreeCards() {
-        
+        model.dealCards(3)
     }
 }
