@@ -12,12 +12,26 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("Score: \(game.score)")
+                .font(.headline)
             AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
                 CardView(card: card)
                     .padding(4)
+                    .onTapGesture {
+                        game.selectCard(card)
+                    }
             }
-            .padding()
+            HStack {
+                Button("+ Deal 3 Cards") {
+                    game.dealThreeCards()
+                }
+                Spacer()
+                Button("New Game") {
+                    game.startNewGame()
+                }
+            }
         }
+        .padding()
     }
 }
 
@@ -29,7 +43,7 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
                 .fill(.white)
             RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
-                .strokeBorder(.red, lineWidth: CardConstants.lineWidth)
+                .strokeBorder( card.isSelected ? .yellow : .red, lineWidth: CardConstants.lineWidth)
             
             VStack {
                 ForEach(0..<card.numberOfShapes, id: \.self) { _ in

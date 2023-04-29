@@ -14,7 +14,11 @@ class SetModelViewModel: ObservableObject {
     // MARK: - Computed Properties
     
     var cards: [Card] {
-        return Array(model.cards[0..<12])
+        return model.drawnCards
+    }
+    
+    var score: Int {
+        return model.score
     }
     
     func shape(for card: Card) -> any Shape {
@@ -29,4 +33,16 @@ class SetModelViewModel: ObservableObject {
     }
     
     // MARK: - Intents
+    
+    func selectCard(_ card: Card) {
+        model.selectCardAndCheckForMatch(card)
+    }
+    
+    func startNewGame() {
+        
+    }
+    
+    func dealThreeCards() {
+        
+    }
 }
