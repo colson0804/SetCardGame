@@ -17,9 +17,6 @@ struct SetGame {
         deck = SetGame.generateCards()
         drawnCards = Array(deck.prefix(12))
         deck.removeFirst(12)
-        
-        print(deck.count)
-        print(drawnCards.count)
     }
     
     mutating func selectCardAndCheckForMatch(_ card: Card) {
@@ -45,15 +42,18 @@ struct SetGame {
     mutating func handleMatch() {
         score += 1
         
+        var idsToRemove = Set<Int>()
         for (index, card) in drawnCards.enumerated() {
-            guard !deck.isEmpty else {
-                return
-            }
-            
-            if card.isSelected{
-                drawnCards[index] = deck.removeFirst()
+            if card.isSelected {
+                if !deck.isEmpty {
+                    drawnCards[index] = deck.removeFirst()
+                } else {
+                    idsToRemove.insert(card.id)
+                }
             }
         }
+        
+        drawnCards.removeAll(where: { idsToRemove.contains($0.id) })
     }
     
     mutating func dealCards(_ numberOfCards: Int = 3) {
