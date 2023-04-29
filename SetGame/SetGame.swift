@@ -19,6 +19,13 @@ struct SetGame {
         deck.removeFirst(12)
     }
     
+    mutating func startNewGame() {
+        score = 0
+        deck = SetGame.generateCards()
+        drawnCards = Array(deck.prefix(12))
+        deck.removeFirst(12)
+    }
+    
     mutating func selectCardAndCheckForMatch(_ card: Card) {
         guard let chosenIndex = drawnCards.firstIndex(where: { $0.id == card.id }) else {
             return

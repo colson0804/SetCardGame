@@ -39,7 +39,7 @@ class SetModelViewModel: ObservableObject {
     }
     
     func startNewGame() {
-        
+        model.startNewGame()
     }
     
     func dealThreeCards() {
