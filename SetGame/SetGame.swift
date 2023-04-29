@@ -8,18 +8,17 @@
 /// The primary model for our set game
 struct SetGame {
     private(set) var score = 0
-//    private(set) var cardsToDisplay = 12
     // Cards in the deck
-    private(set) var cards: [Card]
+    private var deck: [Card]
     // Cards displayed to the player
-    var drawnCards: [Card]
+    private(set) var drawnCards: [Card]
     
     init() {
-        cards = SetGame.generateCards()
-        drawnCards = Array(cards.prefix(12))
-        cards.removeFirst(12)
+        deck = SetGame.generateCards()
+        drawnCards = Array(deck.prefix(12))
+        deck.removeFirst(12)
         
-        print(cards.count)
+        print(deck.count)
         print(drawnCards.count)
     }
     
@@ -52,13 +51,13 @@ struct SetGame {
         score += 1
         
         for (index, card) in drawnCards.enumerated() {
-            guard !cards.isEmpty else {
+            guard !deck.isEmpty else {
                 return
             }
             
             if card.isSelected {
-                if !cards.isEmpty {
-                    drawnCards[index] = cards.removeFirst()
+                if !deck.isEmpty {
+                    drawnCards[index] = deck.removeFirst()
                 }
             }
         }
