@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SetGameView.swift
 //  SetGame
 //
 //  Created by Craig Olson on 4/26/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SetGameView: View {
     @ObservedObject var game = SetModelViewModel()
     
     var body: some View {
@@ -39,31 +39,22 @@ struct CardView: View {
     let card: SetGame.Card
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
-                    .fill(.white)
-                RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
-                    .strokeBorder( card.isSelected ? .yellow : .red, lineWidth: CardConstants.lineWidth)
-                
-                VStack {
-                    ForEach(0..<card.numberOfShapes, id: \.self) { _ in
-                        switch card.shape {
-                        case .oval:
-                            RoundedRectangle(cornerRadius: 50)
-                                .fill(with: card)
-                        case .diamond:
-                            Diamond()
-                                .fill(with: card)
-                        case .squiggle:
-                            Rectangle()
-                                .fill(with: card)
-                        }
-                    }
+        VStack {
+            ForEach(0..<card.numberOfShapes, id: \.self) { _ in
+                switch card.shape {
+                case .oval:
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(with: card)
+                case .diamond:
+                    Diamond()
+                        .fill(with: card)
+                case .squiggle:
+                    Rectangle()
+                        .fill(with: card)
                 }
-                .padding(geometry.size.width * 0.2)
             }
         }
+        .cardify(isSelected: card.isSelected)
     }
     
     private struct CardConstants {
@@ -75,6 +66,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SetGameView()
     }
 }

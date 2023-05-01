@@ -21,17 +21,6 @@ class SetModelViewModel: ObservableObject {
         return model.score
     }
     
-    func shape(for card: Card) -> any Shape {
-        switch card.shape {
-        case .oval:
-            return RoundedRectangle(cornerRadius: 20)
-        case .diamond:
-            return Circle()
-        case .squiggle:
-            return Rectangle()
-        }
-    }
-    
     // MARK: - Intents
     
     func selectCard(_ card: Card) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5C101AE2A0083510047E348 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C101AD2A0083510047E348 /* Cardify.swift */; };
 		A5D0D01229FAB54A003A5AB4 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0D01129FAB54A003A5AB4 /* AspectVGrid.swift */; };
 		A5D4454729FABC14001A9BC4 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4454629FABC14001A9BC4 /* SetGame.swift */; };
 		A5D4454929FABC3B001A9BC4 /* SetModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4454829FABC3B001A9BC4 /* SetModelViewModel.swift */; };
@@ -14,7 +15,7 @@
 		A5D4454E29FAD0B0001A9BC4 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4454D29FAD0B0001A9BC4 /* Diamond.swift */; };
 		A5D4455029FC3ED4001A9BC4 /* Shape+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4454F29FC3ED4001A9BC4 /* Shape+Extensions.swift */; };
 		A5D4A56E29F9E33100DCD5AE /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A56D29F9E33100DCD5AE /* SetGameApp.swift */; };
-		A5D4A57029F9E33100DCD5AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A56F29F9E33100DCD5AE /* ContentView.swift */; };
+		A5D4A57029F9E33100DCD5AE /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A56F29F9E33100DCD5AE /* SetGameView.swift */; };
 		A5D4A57229F9E33500DCD5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D4A57129F9E33500DCD5AE /* Assets.xcassets */; };
 		A5D4A57529F9E33500DCD5AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D4A57429F9E33500DCD5AE /* Preview Assets.xcassets */; };
 		A5D4A57F29F9E33500DCD5AE /* SetGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A57E29F9E33500DCD5AE /* SetGameTests.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5C101AD2A0083510047E348 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		A5D0D01129FAB54A003A5AB4 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		A5D4454629FABC14001A9BC4 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		A5D4454829FABC3B001A9BC4 /* SetModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModelViewModel.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		A5D4454F29FC3ED4001A9BC4 /* Shape+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Extensions.swift"; sourceTree = "<group>"; };
 		A5D4A56A29F9E33100DCD5AE /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D4A56D29F9E33100DCD5AE /* SetGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameApp.swift; sourceTree = "<group>"; };
-		A5D4A56F29F9E33100DCD5AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A5D4A56F29F9E33100DCD5AE /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		A5D4A57129F9E33500DCD5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D4A57429F9E33500DCD5AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5D4A57A29F9E33500DCD5AE /* SetGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +118,8 @@
 			children = (
 				A5D4454C29FACA97001A9BC4 /* Shapes */,
 				A5D4A56D29F9E33100DCD5AE /* SetGameApp.swift */,
-				A5D4A56F29F9E33100DCD5AE /* ContentView.swift */,
+				A5D4A56F29F9E33100DCD5AE /* SetGameView.swift */,
+				A5C101AD2A0083510047E348 /* Cardify.swift */,
 				A5D4A57129F9E33500DCD5AE /* Assets.xcassets */,
 				A5D4A57329F9E33500DCD5AE /* Preview Content */,
 				A5D0D01129FAB54A003A5AB4 /* AspectVGrid.swift */,
@@ -284,8 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D4454929FABC3B001A9BC4 /* SetModelViewModel.swift in Sources */,
-				A5D4A57029F9E33100DCD5AE /* ContentView.swift in Sources */,
+				A5D4A57029F9E33100DCD5AE /* SetGameView.swift in Sources */,
 				A5D4A56E29F9E33100DCD5AE /* SetGameApp.swift in Sources */,
+				A5C101AE2A0083510047E348 /* Cardify.swift in Sources */,
 				A5D4454E29FAD0B0001A9BC4 /* Diamond.swift in Sources */,
 				A5D4454729FABC14001A9BC4 /* SetGame.swift in Sources */,
 				A5D4455029FC3ED4001A9BC4 /* Shape+Extensions.swift in Sources */,
